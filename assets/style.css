@@ -37,13 +37,13 @@ a:hover {color: #f09228;}
   float: left;
 }
 .homepage .header .logo img {
-  width: 80pt;
+  width: 60pt;
   object-fit: cover;
 }
 .homepage .header .title {
   margin: 0 70pt 0 110pt;  /* top right bottom left */
-  padding-top: 7pt;
-  text-align: center;
+  padding-top: 8pt;
+  text-align: left;
   font-size: 25pt;
 }
 .homepage .header .subtitle {
@@ -155,4 +155,9 @@ a:hover {color: #f09228;}
 /* Acknowledgment */
 .homepage .acknowledgement {
   margin: 10pt 20pt 30pt 20pt;  /*top right bottom left*/
+}
+
+.Template{
+  text-align: right;
+  margin: 10pt 20pt 30pt 20pt;
 }
