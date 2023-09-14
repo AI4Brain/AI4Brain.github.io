@@ -1,168 +1,49 @@
-<!doctype html>
 <html lang="en">
-
-
-<!-- === Header Starts === -->
-
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>AI4Brain</title>
-
-    <link href="./assets/bootstrap.min.css" rel="stylesheet">
-    <link href="./assets/font.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./assets/style.css" rel="stylesheet" type="text/css">
-</head>
-<!-- === Header Ends === -->
-
-
-<body>
-
-
-<!-- === Homepage Starts === -->
-<div class="homepage">
-
-
-    <!-- === Header Starts === -->
-    <div class="header">
-        <div class="logo">
-            <a href="https://github.com/AI4Brain" target="_blank"><img src="./assets/Logo.png"></a>
-        </div>
-        <div class="title">
-            AI4Brain
-        </div>
-        <div class="subtitle">
-        </div>
-        
-    </div>
-    <!-- === Header Ends === -->
-
-
-    <!-- === Projects Section Starts === -->
-
-
-    <div class="project">
-        <div class="image">
-            <a href="https://Hychaowang.github.io/SleepKD" target="_blank">
-                <div class="image">
-                    <a href="" target="_blank">
-                        <img src="images/SleepKD.png">
-                    </a>
-                </div>
-            </a>
-        </div>
-        <div class="info">
-            <b>
-                Teacher Assistant-Based Knowledge Distillation Extracting Multi-level Features on Single Channel Sleep EEG
-            </b> <br>
-            Heng Liang, Yucheng Liu, Haichao Wang, Ziyu Jia*
-            <br>
-            <i>IJCAI 2023</i><br>
-            [<a href="https://www.ijcai.org/proceedings/2023/0439.pdf" target="_blank">Paper</a>]
-            [<a href="https://github.com/Hychaowang/SleepKD" target="_blank">Code</a>]
-            [<a href="https://hychaowang.github.io/SleepKD" target="_blank">Webpage</a>]
-            [<a href="https://hychaowang.github.io/SleepKD#video" target="_blank">Video</a>]
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="Template">
-            <a href="./webpage_template.zip" download>Template Download</a>
-        </div>
-    </div>
+    <title>AI4Brain</title>
     
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/ai4brain.png" alt="Logo" class="avatar"> <!-- 用你的Logo图片替换 "logo.png" -->
+        </div>
+        <div class="banner">
+            <div class="title">
+                AI4Brain 
+            </div>
+            <div class="title">
+            脑科学与智能
+            </div>
+        </div>
+    </header>
+  
+    
+    <div class="projects">
+        <div class="item">
+            <div class="image-container">
+                <img src="img/SleepKD.png" alt="图片1">
+            </div>
+            <div class="text-container">
+                <h3>IJCAI 2023</h3>
+                <h1>SleepKD: A Compression Algorithm for Sleep Models</h1>
+                <p>Existing sleep stage classification models are large in size, making it difficult to deploy applications in real-world scenarios. We design a generalized knowledge distillation framework for sleep stage classification models with multi-level distillation module, teacher assistant module, and the rest of the distillation modules. Experiments on two datasets, Sleep-EDF and ISRUC-III, show that this method significantly compress the sleep models with little performance loss.</p>
+                <div class="'link-container">
+                    
+                    <a href="https://www.ijcai.org/proceedings/2023/0439.pdf" class="link">Paper</a>
+                    <a href="https://github.com/Hychaowang/SleepKD" class="link">Code</a>
+                    <a href="https://hychaowang.github.io/SleepKD" class="link">Webpage</a>
+                    <a href="https://hychaowang.github.io/SleepKD#video" class="link">Video</a>
+                </div>
+            </div>
+        </div>
 
-
-
-
-
-
-    <!-- === Projects Section Ends === -->
-
-
-    <!-- === Tutorials Section Starts === -->
-    <!--    <div class="section">Tutorials</div>-->
-    <!--    <div class="tutorial">-->
-    <!--        <div class="image">-->
-    <!--            <a href="https://interpretablevision.github.io/" target="_blank">-->
-    <!--                <img src="./tutorials/cvpr20_tutorial_bolei.jpg">-->
-    <!--            </a>-->
-    <!--        </div>-->
-    <!--        <div class="info">-->
-    <!--            <b>Exploring and Exploiting Interpretable Semantics in GANs</b> <br>-->
-    <!--            Bolei Zhou <br>-->
-    <!--            <i>Interpretable Machine Learning for Computer Vision (CVPR 2020 Tutorial)</i> <br>-->
-    <!--            [<a href="https://www.youtube.com/watch?v=rfx3whKgFVo&feature=youtu.be" target="_blank">Video (YouTube)</a>]-->
-    <!--            [<a href="https://www.bilibili.com/video/BV1z54y1B785" target="_blank">Video (bilibili)</a>]-->
-    <!--            [<a href="https://interpretablevision.github.io/slide/cvpr20_bolei.pdf" target="_blank">Slides</a>]-->
-    <!--        </div>-->
-    <!--    </div>-->
-    <!-- === Tutorials Section Ends === -->
-
-
-    <!-- === Team Section Starts === -->
-    <!-- <div class="section">Team</div>
-    <div class="avatar">
-        <table>
-            <tr>
-                <td>Team Leader</td>
-                <td>
-                    <a href="http://ziyujia.github.com" target="_blank">
-                        <div style="margin-top: 5pt;">Ziyu Jia</div>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>Team Members</td>
-                <td>
-                    <a href="https://github.com/lh-violet/" target="_blank">
-                        <div style="margin-top: 5pt;">Heng Liang</div>
-                    </a>
-                </td>
-                <td>
-                    <a href="https://github.com/alex-cc-liu/" target="_blank">
-                        <div style="margin-top: 5pt;">Yucheng Liu</div>
-                    </a>
-                </td>
-                <td>
-                    <a href="http://Hychaowang.github.io/" target="_blank">
-                        <div style="margin-top: 5pt;">Haichao Wang</div>
-                    </a>
-                </td> -->
-
-                <!-- <td>
-                    <a href="https://scholar.google.com/citations?user=726MCb8AAAAJ&hl=en" target="_blank">
-                        <div style="margin-top: 5pt;">Jiankai Sun</div>
-                    </a>
-                </td> -->
-            </tr>
-            <!--            <tr>-->
-            <!--                <td>Alumni</td>-->
-            <!--                <td>-->
-            <!--                    <a href="https://scholar.google.com.hk/citations?user=726MCb8AAAAJ&hl=en" target="_blank">-->
-            <!--                        <img src="./avatars/jiankai.png" class="img-circle">-->
-            <!--                        <div style="margin-top: 5pt;">Somebody</div>-->
-            <!--                    </a>-->
-            <!--                </td>-->
-            <!--            </tr>-->
-        </table>
-    </div>
-    <!-- === Team Section Ends === -->
-
-
-    <!-- === Acknowledgement Section Starts
-<div class="section">Acknowledgement</div>
-<div class="acknowledgement">
-    We would like to acknowledge the support from the Early Career Scheme (ECS) through the Research Grants Council
-    (RGC) of Hong Kong under Grant No.24206219 and CUHK FoE RSFS Grant.
-</div>
-=== Acknowledgement Section Ends === -->
-
-
-</div>
-<!-- === Homepage Ends === -->
-
-
+        <footer>
+            &copy; AI4Brain 2023. 
+            <a href="https://space.bilibili.com/3493114830392257?spm_id_from=333.337.0.0"><i class="icon"><img src="img/bilibili.png" width=40 height=20></i></a>
+        </footer>
 </body>
-
 </html>
