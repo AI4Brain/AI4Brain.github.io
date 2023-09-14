@@ -90,7 +90,7 @@ header {
 
 /* 副标题样式 */
 .projects .item h2 {
-    font-size: 28px; /* 副标题字体大小 */
+    font-size: 20px; /* 副标题字体大小 */
     margin: 5px 0; /* 副标题外边距 */
 }
 
