@@ -16,13 +16,13 @@ header {
 
 /* Logo样式 */
 .logo {
-    margin-left: 20px; /* 设置Logo的左边距 */
+    margin-left: 10%; /* 设置Logo的左边距 */
     height: 70pt;
     align-items: center;
 }
 
 .logo .avatar{
-    height: 65pt;
+    height: 70pt;
     /* margin-top: 3%; */
 }
 
