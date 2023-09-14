@@ -107,7 +107,7 @@ button {
 
 /* 大标题样式 */
 .projects .item h1 {
-    font-size: 46px; /* 大标题字体大小 */
+    font-size: 42px; /* 大标题字体大小 */
     line-height: 1.2;
     color: rgb(51,108,163);
     margin: 0; /* 大标题外边距 */
