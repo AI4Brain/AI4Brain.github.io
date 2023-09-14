@@ -28,6 +28,7 @@ header {
 
 /* Banner样式 */
 .banner {
+    flex:8;
     margin-right: 30px; /* 设置Banner的右边距 */
     margin-left: 1%;
 }
@@ -37,8 +38,32 @@ header {
     font-weight: 600;
 }
 
+.container{
+    flex:1;
+    padding-right: 5%;
+}
 
-.projects {}
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border: none;
+}
+
+/* 修改搜索框和按钮的样式 */
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+}
+
+button {
+    background-color: white;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+}
 
 /* 设置每个元素的样式 */
 .projects .item {
@@ -144,3 +169,7 @@ footer .icon {
     color: #fff; /* 图标颜色为白色 */
     margin: 0 10px; /* 图标之间的间距 */
 }
+
+
+/* 添加新的样式规则 */
+
