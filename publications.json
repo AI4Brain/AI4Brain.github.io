@@ -1,0 +1,35 @@
+[
+    {
+        "title": "Teacher Assistant-Based Knowledge Distillation Extracting Multi-level Features on Single Channel Sleep EEG",
+        "authors": "Heng Liang, Yucheng Liu, Haichao Wang, Ziyu Jia*",
+        "image": "img/SleepKD.png",
+        "conference": "IJCAI",
+        "links": {
+            "code": "#",
+            "paper": "#",
+            "webpage": "#"
+        }
+    },
+    {
+        "title": "EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognition Based on Physiological Signals",
+        "authors": "Yucheng Liu, Ziyu Jia*, Haichao Wang",
+        "image": "img/emokd.png",
+        "conference": "ACM MM",
+        "links": {
+            "code": "#",
+            "paper": "#",
+            "webpage": "#"
+        }
+    },
+    {
+        "title": "Mutual Distillation Extracting Spatial-temporal Knowledge for Lightweight Multi-channel Sleep Stage Classification",
+        "authors": "Ziyu Jia, Haichao Wang*, Yucheng Liu, Tianzi Jiang",
+        "image": "img/stmd.png",
+        "conference": "SIGKDD",
+        "links": {
+            "code": "#",
+            "paper": "#",
+            "webpage": "#"
+        }
+    }
+]

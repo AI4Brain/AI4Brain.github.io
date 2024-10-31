@@ -1,80 +1,102 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./assets/style.css" rel="stylesheet" type="text/css">
     <title>AI4Brain</title>
-    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="img/ai4brain.png" alt="Logo" class="avatar"> <!-- 用你的Logo图片替换 "logo.png" -->
-        </div>
+    <header class="header">
         <div class="banner">
-            <div class="title">
-            脑科学与智能
+            <div class="container">
+                <img src="img/ai4brain.png" alt="Lab Logo" class="logo">
+                <nav class="nav">
+                    <a href="#about">About</a>
+                    <a href="#publications">Publications</a>
+                    <a href="#team">Team</a>
+                    <a href="#contact">Contact</a>
+                </nav>
             </div>
         </div>
-        <div class="container">
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Search this site...">
-                <button id="searchButton"><img src="img/search.png" width="22px"></button>
-            </div>
-            <ul id="results"></ul>
-        </div>
-        <script src="./assets/search.js"></script>
     </header>
-  
-  
-    
-    
-    <div class="projects">
-        <h1>Publications</h1>
-        <hr>
-        <div class="item">
-            <div class="image-container">
-                <img src="img/SleepKD.png" alt="图片1">
-            </div>
-            <div class="text-container">
-                <h3>IJCAI 2023</h3>
-                <h1>Teacher Assistant-Based Knowledge Distillation Extracting Multi-level Features on Single Channel Sleep EEG</h1>
-                <h2>Heng Liang, Yucheng Liu, Haichao Wang, Ziyu Jia*</h2>
-                <!-- <p>Existing sleep stage classification models are large in size, making it difficult to deploy applications in real-world scenarios. We design a generalized knowledge distillation framework for sleep stage classification models with multi-level distillation module, teacher assistant module, and the rest of the distillation modules. Experiments on two datasets, Sleep-EDF and ISRUC-III, show that this method significantly compress the sleep models with little performance loss.</p> -->
-                <div class="'link-container">
-                    <a href="https://www.ijcai.org/proceedings/2023/0439.pdf" class="link">Paper</a>
-                    <a href="https://github.com/Hychaowang/SleepKD" class="link">Code</a>
-                    <a href="https://hychaowang.github.io/SleepKD" class="link">Webpage</a>
-                    <a href="https://hychaowang.github.io/SleepKD#video" class="link">Video</a>
-                </div>
+
+    <section id="publications" class="publications">
+        <div class="container">
+            <h2>Publications</h2>
+            <div class="publication-list" id="publication-list">
+                <!-- Cards will be generated here by JavaScript -->
             </div>
         </div>
+    </section>
 
-        <hr>
-
-        <div class="item">
-            <div class="image-container">
-                <img src="img/emokd.png" alt="图片1">
+    <!-- <section id="team" class="team">
+        <div class="container">
+            <h2>Our Team</h2>
+            <div class="team-member">
+                <h3>Dr. Jane Doe</h3>
+                <p>Position: Principal Investigator</p>
+                <p>Research Interests: Machine Learning, Data Analysis</p>
             </div>
-            <div class="text-container">
-                <h3>ACM Multimedia 2023</h3>
-                <h1>EmotionKD: A Cross-Modal Knowledge Distillation Framework for Emotion Recognition Based on Physiological Signals</h1>
-                <h2>Yucheng Liu, Ziyu Jia*, Haichao Wang</h2>
-                <!-- <p>Existing sleep stage classification models are large in size, making it difficult to deploy applications in real-world scenarios. We design a generalized knowledge distillation framework for sleep stage classification models with multi-level distillation module, teacher assistant module, and the rest of the distillation modules. Experiments on two datasets, Sleep-EDF and ISRUC-III, show that this method significantly compress the sleep models with little performance loss.</p> -->
-                <div class="'link-container">
-                    <a href="" class="link">Paper</a>
-                    <a href="https://github.com/YuchengLiu-Alex/EmotionKD" class="link">Code</a>
-                    <a href="https://yuchengliu-alex.github.io/EmotionKD/" class="link">Webpage</a>
-                    <a href="https://yuchengliu-alex.github.io/EmotionKD/#video" class="link">Video</a>
-                </div>
+            <div class="team-member">
+                <h3>John Smith</h3>
+                <p>Position: PhD Student</p>
+                <p>Research Interests: Computer Vision, Robotics</p>
             </div>
         </div>
+    </section>
 
-        <hr>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Email: lab@example.com</p>
+            <p>Address: 123 Science Road, University City</p>
+        </div>
+    </section>
 
-        <footer>
-            &copy; AI4Brain 2023. 
-            <a href="https://space.bilibili.com/3493114830392257?spm_id_from=333.337.0.0"><i class="icon"><img src="img/bilibili.png" width=40 height=20></i></a>
-        </footer>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Lab Name. All rights reserved.</p>
+        </div>
+    </footer> -->
+
+    <script>
+        fetch('publications.json')
+            .then(response => response.json())
+            .then(data => {
+                const publicationList = document.getElementById('publication-list');
+                data.forEach(publication => {
+                    const card = document.createElement('div');
+                    card.classList.add('publication-item', 'card');
+                    card.innerHTML = `
+                        <div class="card-image-wrapper">
+                            <img src="${publication.image}" alt="${publication.title} Image" class="publication-image">
+                        </div>
+                        <div class="card-content">
+                            <h3>${publication.title}</h3>
+                            <p>${publication.authors}</p>
+                            <p>${publication.conference}</p>
+                            <div class="card-links">
+                                <a href="${publication.links.code}" class="link-item" data-description="Code">
+                                    <img src="assets/icons/code.svg" alt="Code Icon" class="link-icon">
+                                </a>
+                                <a href="${publication.links.paper}" class="link-item" data-description="Paper">
+                                    <img src="assets/icons/paper.svg" alt="Paper Icon" class="link-icon">
+                                </a>
+                                <a href="${publication.links.webpage}" class="link-item" data-description="Webpage">
+                                    <img src="assets/icons/webpage.svg" alt="Webpage Icon" class="link-icon">
+                                </a>
+                                <a href="${publication.links.video}" class="link-item" data-description="Video">
+                                    <img src="assets/icons/video.svg" alt="Video Icon" class="link-icon">
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    publicationList.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error fetching publication data:', error));
+    </script>
 </body>
 </html>
