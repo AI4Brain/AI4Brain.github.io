@@ -5,9 +5,10 @@
         "image": "img/SleepKD.png",
         "conference": "IJCAI",
         "links": {
-            "code": "#",
-            "paper": "#",
-            "webpage": "#"
+            "code": "https://github.com/Hychaowang/SleepKD",
+            "paper": "https://www.ijcai.org/proceedings/2023/0439.pdf",
+            "webpage": "https://hychaowang.github.io/SleepKD",
+            "video": "https://hychaowang.github.io/SleepKD#video"
         }
     },
     {
@@ -16,9 +17,10 @@
         "image": "img/emokd.png",
         "conference": "ACM MM",
         "links": {
-            "code": "#",
-            "paper": "#",
-            "webpage": "#"
+            "code": "https://github.com/YuchengLiu-Alex/EmotionKD",
+            "paper": "https://www.researchgate.net/profile/Yucheng-Liu-28/publication/375032220_EmotionKD_A_Cross-Modal_Knowledge_Distillation_Framework_for_Emotion_Recognition_Based_on_Physiological_Signals/links/660d2672f5a5de0a9ff7048f/EmotionKD-A-Cross-Modal-Knowledge-Distillation-Framework-for-Emotion-Recognition-Based-on-Physiological-Signals.pdf",
+            "webpage": "https://yuchengliu-alex.github.io/EmotionKD/",
+            "video": "https://yuchengliu-alex.github.io/EmotionKD/#video"
         }
     },
     {
@@ -28,8 +30,9 @@
         "conference": "SIGKDD",
         "links": {
             "code": "#",
-            "paper": "#",
-            "webpage": "#"
+            "paper": "https://dl.acm.org/doi/abs/10.1145/3637528.3671981",
+            "webpage": "#",
+            "video": "#"
         }
     }
 ]
