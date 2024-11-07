@@ -23,7 +23,7 @@
             margin: 0;
             padding: 40px;
         }
-
+    
         #content {
             max-width: 800px;
             margin: 40px auto;
@@ -32,35 +32,44 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
+    
         h1, h2, h3 {
             border-bottom: 1px solid #eaeaea;
             padding-bottom: 5px;
         }
-
+    
+        /* BibTeX and Code Styling */
         pre {
-            background: #272822;
-            color: #f8f8f2;
+            background: #1e1e1e; /* Darker background for better contrast */
+            color: #d4d4d4; /* Softer text color */
             padding: 15px;
             border-radius: 5px;
             overflow: auto;
+            font-family: monospace;
         }
-
+        
+        /* Further differentiation for BibTeX keywords */
+        pre code {
+            color: white; /* Highlight for BibTeX keywords like title, author */
+            background-color: black;
+        }
+    
         code {
             background: #f4f4f4;
             padding: 2px 5px;
             border-radius: 4px;
         }
-
+    
+        /* Link styling */
         a {
             color: #007acc;
             text-decoration: none;
         }
-
+    
         a:hover {
             text-decoration: underline;
         }
-
+    
         img {
             max-width: 100%;
             height: auto;
@@ -79,7 +88,7 @@
     $(function(){
         $.ajax({
             type: "get",
-            url: "article.md",
+            url: "kdd.md",
             dataType: "html",
             success: function(res){
                show(res);
