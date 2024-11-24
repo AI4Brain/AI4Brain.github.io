@@ -6,12 +6,14 @@
     <title>AI4Brain</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="banner">
             <div class="container">
-                <img src="img/ai4brain.png" alt="Lab Logo" class="logo">
+                <img src="img/logo.png" alt="Lab Logo" class="logo">
                 <nav class="nav">
                     <a href="#about">About</a>
                     <a href="#publications">Publications</a>
@@ -31,64 +33,43 @@
         </div>
     </section>
 
-    <!-- <section id="team" class="team">
-        <div class="container">
-            <h2>Our Team</h2>
-            <div class="team-member">
-                <h3>Dr. Jane Doe</h3>
-                <p>Position: Principal Investigator</p>
-                <p>Research Interests: Machine Learning, Data Analysis</p>
-            </div>
-            <div class="team-member">
-                <h3>John Smith</h3>
-                <p>Position: PhD Student</p>
-                <p>Research Interests: Computer Vision, Robotics</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Email: lab@example.com</p>
-            <p>Address: 123 Science Road, University City</p>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Lab Name. All rights reserved.</p>
-        </div>
-    </footer> -->
+    <div id="loading-spinner" style="display: none; text-align: center; margin: 2rem 0;">
+        <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: #004aad;"></i>
+    </div>
 
     <script>
-        fetch('publications.json')
+        const loadingSpinner = document.getElementById("loading-spinner");
+        loadingSpinner.style.display = "block";
+
+        fetch("publications.json")
             .then(response => response.json())
             .then(data => {
-                const publicationList = document.getElementById('publication-list');
+                const publicationList = document.getElementById("publication-list");
+                loadingSpinner.style.display = "none";
+
                 data.forEach(publication => {
-                    const card = document.createElement('div');
-                    card.classList.add('publication-item', 'card');
+                    const card = document.createElement("div");
+                    card.classList.add("publication-item", "card");
                     card.innerHTML = `
-                        <div class="card-image-wrapper">
-                            <img src="${publication.image}" alt="${publication.title} Image" class="publication-image">
+                        <div class="card-left">
+                            <img src="${publication.image}" alt="${publication.title}" class="publication-image">
                         </div>
-                        <div class="card-content">
+                        <div class="card-right">
                             <h3>${publication.title}</h3>
                             <p>${publication.authors}</p>
                             <p>${publication.conference}</p>
                             <div class="card-links">
                                 <a href="${publication.links.code}" class="link-item" data-description="Code">
-                                    <img src="assets/icons/code.svg" alt="Code Icon" class="link-icon">
+                                    <img src="assets/icons/code.png" alt="Code" class="link-icon">
                                 </a>
                                 <a href="${publication.links.paper}" class="link-item" data-description="Paper">
-                                    <img src="assets/icons/paper.svg" alt="Paper Icon" class="link-icon">
+                                    <img src="assets/icons/paper.png" alt="Paper" class="link-icon">
                                 </a>
                                 <a href="${publication.links.webpage}" class="link-item" data-description="Webpage">
-                                    <img src="assets/icons/webpage.svg" alt="Webpage Icon" class="link-icon">
+                                    <img src="assets/icons/webpage.png" alt="Webpage" class="link-icon">
                                 </a>
                                 <a href="${publication.links.video}" class="link-item" data-description="Video">
-                                    <img src="assets/icons/video.svg" alt="Video Icon" class="link-icon">
+                                    <img src="assets/icons/video.png" alt="Video" class="link-icon">
                                 </a>
                             </div>
                         </div>
@@ -96,7 +77,10 @@
                     publicationList.appendChild(card);
                 });
             })
-            .catch(error => console.error('Error fetching publication data:', error));
+            .catch(error => {
+                loadingSpinner.style.display = "none";
+                console.error("Error fetching publications:", error);
+            });
     </script>
 </body>
 </html>

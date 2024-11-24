@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.7;
     margin: 0;
     padding: 0;
@@ -8,41 +8,84 @@ body {
 }
 
 .header {
-    background: rgb(59, 77, 135);
+    background: #f9f9f9;
     color: #fff;
 }
 
 .banner {
-    background: rgb(32, 45, 87);
-    padding: 1.2rem 0;
+    background: #f9f9f9;
+    padding: 1rem 0;
     text-align: center;
 }
 
+/* General layout */
 .banner .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo {
-    height: 110px; /* Slightly larger */
-    margin-right: 1rem;
-}
-
-.lab-name {
-    color: #fff;
-    font-size: 2.2rem;
-}
-
-.header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 0;
 }
 
-.nav a {
+.nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Search icon */
+
+.search-icon {
+    font-size: 1.5rem;
+    color: #004aad;
+    cursor: pointer;
+}
+
+.search-icon:hover {
+    color: #00337f;
+}
+
+.search-bar {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.search-bar input {
+    width: 80%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    padding: 0.5rem 1rem;
+    background-color: #004aad;
     color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #00337f;
+}
+
+.logo {
+    height: 50px; /* Slightly larger */
+    margin-right: 1rem;
+}
+
+
+.nav a {
+    color: #004aad;
     text-decoration: none;
     margin: 0 1.2rem;
     font-size: 1.05rem; /* Larger navigation links */
@@ -52,11 +95,12 @@ body {
     text-decoration: underline;
 }
 
+
+
 .container {
-    width: 90%; /* Increase container width to reduce side whitespace */
+    width: 75%; /* Increase container width to reduce side whitespace */
     max-width: 1400px; /* Allow for wider screens */
     margin: auto;
-    padding: 2.5rem 0;
 }
 
 .publications, .team, .contact {
@@ -65,28 +109,32 @@ body {
 
 .publication-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjusted minimum column width */
+    grid-template-columns: 1fr; /* 每行一个卡片 */
     gap: 2.5rem;
-    align-items: flex-start;
+    align-items: stretch; /* 让所有子元素高度一致 */
 }
 
 .publication-item {
     box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    height: 500px; /* Slightly taller to match font increase */
+    flex-direction: row; /* 水平排列 */
+    height: auto; /* 调整高度以适应新的布局 */
+    width: 100%;
 }
 
 .card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    height: 100%; /* 继承父级的高度 */
+    min-height: 200px; /* 确保有一个最小高度 */
+    border: 0.5px solid #ddd;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
     background: #fff;
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 1.5rem; /* Increase padding */
+    flex-direction: row; /* 水平排列 */
+    padding: 0; /* 移除内边距，因为我们将使用子元素的内边距 */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -95,9 +143,26 @@ body {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
+.card-left {
+    flex: 1; /* 左侧占 1/3 的宽度 */
+    background: white; /* 深色背景 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-right {
+    flex: 2; /* 右侧占 2/3 的宽度 */
+    background: #f9f9f9; /* 浅色背景 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
 .card-image-wrapper {
-    flex: 0 0 200px;
     width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -105,37 +170,35 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-bottom: 2px solid #f0f0f0;
 }
 
 .card-content {
-    padding: 1.25rem;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    row-gap: 0.75rem;
+    row-gap: 0.5rem; /* 减少行间距 */
 }
 
 .card-content h3 {
-    font-size: 1.3rem; /* Larger heading */
-    font-weight: 700;
-    margin-bottom: 0.25rem;
+    font-size: 1.35rem; /* 减小标题字体大小 */
+    font-weight: 400;
+    margin-bottom: -0.7rem; /* 减少底部间距 */
     color: #333;
 }
 
 .card-content p {
-    font-size: 1rem; /* Larger paragraph */
-    line-height: 1.5;
+    font-size: 1rem; /* 减小段落字体大小 */
+    line-height: 1.3; /* 减小行高 */
     color: #555;
-    margin-bottom: 0.5rem;
+    margin-bottom: -0.7rem; /* 减少底部间距 */
 }
 
 .card-links {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
     position: relative;
 }
 
@@ -143,7 +206,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.3rem;
-    font-size: 1rem; /* Increased font size for links */
+    font-size: 1rem; /* 较大的链接 */
     text-decoration: none;
     color: #007bff;
     transition: color 0.3s ease;
@@ -162,13 +225,13 @@ body {
 .link-item:hover::after {
     content: attr(data-description);
     position: absolute;
-    top: 120%;
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     padding: 0.35rem 0.6rem;
     white-space: nowrap;
     color: #333;
-    font-size: 0.95rem; /* Increase tooltip font size */
+    font-size: 0.95rem; /* 较大的提示文字 */
     border-radius: 5px;
     background: #f9f9f9;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -199,4 +262,25 @@ body {
         flex-direction: column;
         gap: 1rem;
     }
+}
+.search-bar input:focus {
+    width: 90%;
+    transition: width 0.3s ease;
+    border-color: #004aad;
+}
+
+.search-bar {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.search-bar.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
 }
